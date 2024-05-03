@@ -29,7 +29,8 @@
             align-items: center; */
             background-color: #ffffff;
             margin: 20px auto;
-            width: 600px;
+            /* width: 100%;  */
+            /* max-width: 600px;  */
             height: 4px;
             border: none;
             overflow: hidden;
@@ -44,13 +45,23 @@
             background-color: #ffffff;
             border: solid 10px transparent;
             box-shadow: 0 0 10px 0.5px  #606060;
-            margin: 0;
-            padding: 1px 0 40px 0;
+            margin: 20px;
+            /* padding: 1px 0 40px 0; */
+            text-align: left;
         }
         header h1 {
             color: #ffffff;
             font-family: 'Helvetica', Arial, sans-serif;
             font-size: 40px;
+            margin: 20px;
+            text-align: center;
+        }
+
+                /* Media query for smaller devices */
+        @media screen and (max-width: 768px) {
+            header h1 {
+                font-size: 30px;
+            }
         }
         /* Romper el texto para estilizarlo dentro de la caja */
         span {
