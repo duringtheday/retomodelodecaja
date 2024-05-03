@@ -3,142 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="styles.css"> -->
-    <!-- <link rel="icon" type="image/x-icon" href="favicon.ico"> -->
-    <title>Reto: Model de Caja</title>
+    <title>Reto: Estilos</title>
     <style>
-        /* Reseteo y estilo del cuerpo (body) de la página. */
+        /* Reseteo */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        ul, ol {
+            list-style: none;
+        }
+        /* Cuerpo de la página (body). */
         body {
-            * {
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box; 
-            }
-            ul, ol {
-                list-style: none;
-            }
-            background-color: #ff3300;
-            padding: 40px;
-            font-family: 'Helvetica', Arial, sans-serif;
+            background: linear-gradient(to bottom, #48a7d7, #02abff);
+            margin: 0;
+            padding: 0;
         }
-        /* Estilo de línea horizontal. */
-        hr {
-            /* background-color: #ffffff;
-            margin: 20px;
-            padding: 1px 50px;
-            align-items: center; */
-            background-color: #ffffff;
-            margin: 20px auto;
-            /* width: 100%;  */
-            /* max-width: 600px;  */
-            height: 4px;
-            border: none;
-            overflow: hidden;
-        }
-        /* Estilo de Ecabezado (header). */
-        header {
-            color: #ffffff;
-            text-align: center;
-        }
-        /* Estilo de la parte principal dentro del cuerpo (body>main). */
-        main {
-            background-color: #ffffff;
-            border: solid 10px transparent;
-            box-shadow: 0 0 10px 0.5px  #606060;
-            margin: 20px;
-            /* padding: 1px 0 40px 0; */
-            text-align: left;
-        }
-        header h1 {
-            color: #ffffff;
-            font-family: 'Helvetica', Arial, sans-serif;
-            font-size: 40px;
-            margin: 20px;
-            text-align: center;
-        }
-
-                /* Media query for smaller devices */
-        @media screen and (max-width: 768px) {
-            header h1 {
-                font-size: 30px;
-            }
-        }
-        /* Romper el texto para estilizarlo dentro de la caja */
-        span {
-            display: block;
-/*             word-wrap: break-word; */
-        }
-        /* Estilo de título de producto 1 y 2. */
-        h2 {
-            color: #ff6600;
-            line-height: 2.5;
-        }
-        /* Estilo de la Caja o bloque 1 (Producto 1) */
+        /* Contenedor del primer bloque de la página, el encabezado (header). */
         .container1 {
-            background-color: #f5f5f5;
-            /* box-shadow: 0 0 10px 1px  #9d9d9d; */
-            border: solid 2px #cccccc;
-            margin: 20px;
-            padding: 20px;
-            overflow: hidden;
-        }
-        /* Estilo de la Caja o bloque 2 (Producto 2) */
-        .container2 {
-            background-color: #f5f5f5;
-            /* box-shadow: 0 0 10px 1px  #9d9d9d; */
-            border: solid 2px #cccccc;
-            margin: 20px;
-            padding: 20px;
-            overflow: hidden;
-        }
-        /* Esilo imagen */
-        img {
-
-        }
-        /* Estilo de párrafo */
-        p {
-            color: #000;
+            background: #203f4a;
+            position: relative;
+            /* margin: 0 5px; */
+            color: rgb(255, 255, 255);
             font-family: Arial, Helvetica, sans-serif;
-            text-align: left;
-            font-size: 16px;
-            line-height: 2.5;
-        }
-        /* Estilo de anclaje o enlace (ver más) */
-        a {
-            color: blue;
-            text-decoration: none;
-        }
-        /* Estilo de pié de página (footer) */
-        footer {
-            color: #ffffff;
-            font-style: oblique;
             text-align: center;
-            margin: 0 0 0 0px;
-            padding: 10px 10px 10px 10px;
+            padding: 47.5px 0;
+            z-index: 0;
+        }
+        /* Creación de un pseudo-elemento para enviar detrás la imagen principal del banner del
+        encabezado y organizarlo respecto al texto, para no perder su visibilidad. */
+        .container1::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background-image: url("./stadium_1.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: bottom 21% left 1%;
+            opacity: 0.4; 
+            z-index: -1;
+            overflow: hidden;
+        }
+        /* Opcional */
+        /* .background-text {
+            display: inline-block; /* opcional por si se quiere reducir la caja. 
+            background-color: rgba(32, 46, 50, 0.7);
+            padding: 10px;
+            border: groove 10px transparent;
+            border-radius: 35px;
+            box-shadow: 0 0 10px 0.5px  #282828;
+            z-index: 1;
+        } */
+        /* Contenedor del segundo bloque. */
+        .container2 {
+            padding: 50px 20px;
+            text-align: center;
+        }
+        /* Imagen del contenedor del segundo bloque (img). */
+        .container2 img {
+            margin: 20px;
+            box-shadow: 0 0 15px 1px #203f4a;
+        }
+        /* Enlace (a) */
+        a {
+            color: white;
+            text-decoration: none; 
+            font-size: 10px; 
+        }
+        /* Pié de página (footer) */
+        footer {
+            background-color: #203f4a;
+            color: white;
+            padding: 20px 0;
+            font-size: 16px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 20px;
         }
     </style>
 </head>
 <body>
-    <header title="Landing Page de Comida">
-    <h1>Bienvenido a Nuestra Landing<span>Page de Comida</span></h1>
-    </header>
-    <hr>
-    <main>
-        <div class="container1">
-            <img src="./material/hambjpg.webp" type="image/webp" width="280" height="150" alt="Hamburguesa">
-            <h2>Producto 1</h2>
-            <p>Descripción del producto. Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-            <a href="#">Ver más</a>
+    <header>
+        <div class="container1" title="Landing Page de Deportes">
+            <h1>Landing Page de Deportes</h1>
+            <p>¡Encuentra todo lo que necesitas para mantenerte activo!</p>
         </div>
-        <div class="container2">
-            <img src="./material/hambjpg.webp" type="image/webp" width="280" height="150" alt="Hamburguesa">
-            <h2>Producto 2</h2>
-            <p>Descripción del producto. Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-            <a href="#">Ver más</a>
-        </div>
-    </main>
-    <footer>
-        <small>&copy Landing Page de Productos de Comida</small>
-    </footer>
+    </header>   
+    <div class="container2">
+        <img src="./deporte_1.png" alt="Imagen niños jugando fútbol">
+        <h3>Deporte 1</h3>
+        <p>Descripción del deporte. Lorem ipsum dolor sit amet consectetur 
+        adipisicing elit.</p>
+        <a href="#">Ver más</a>
+    </div>  
+    <footer>&copy;Landing Page de Deportes</footer>
 </body>
 </html>
